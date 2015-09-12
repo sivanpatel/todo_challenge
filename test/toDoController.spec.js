@@ -9,7 +9,20 @@ describe('toDoController', function() {
   }));
 
   it("initialises with an empty 'task to add' term", function() {
-    expect(ctrl.toDoTerm).toBeUndefined();
+    expect(ctrl.taskList).toBeUndefined();
+    expect(ctrl.taskTerm).toBeUndefined();
+  });
+
+  describe('when adding a task', function() {
+    var task =[
+      {"task": 'make a todo list'}
+      ];
+
+    it('displays the added task', function() {
+      ctrl.taskTerm = 'test';
+      ctrl.addTask();
+      expect(ctrl.taskList.items).toEqual(task);
+    });
   });
 
 });
