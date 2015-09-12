@@ -1,4 +1,4 @@
-toDoList.controller('toDoController', ['task', function(task) {
+toDoList.controller('toDoController', [function() {
 
 
 
