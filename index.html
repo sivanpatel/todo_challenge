@@ -15,14 +15,14 @@
   <body ng-controller="toDoController as taskCtrl">
     <div>
       <form>
-        <input type="text">
-        <button class="btn" ng-click="taskCtrl.addTask()">Add task</button>
+        <input type="text" ng-model="taskTerm">
+        <button class="btn" ng-click="addTask()">Add task</button>
       </form>
 
       <ul class="list-group">
-        <li ng-repeat="task in taskCtrl.taskList.items">
-          <input class="done" type="checkbox">
-          {{ taskList.item }}
+        <li ng-repeat="task in items">
+          <input class="doneCheckBox" type="checkbox">
+          {{ task }}
         </li>
       </ul>
 
