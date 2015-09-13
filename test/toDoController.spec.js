@@ -58,6 +58,24 @@ describe('toDoController', function() {
       expect(scope.item.done).toBe(true);
     });
 
+    it('should mark a done item as not done', function() {
+      scope.item = {taskName: 'test', done: true}
+      scope.switchDone(scope.item);
+      expect(scope.item.done).toBe(false);
+    });
+
   });
-  
+
+  describe('remove', function() {
+
+    it('should remove an item from the list', function() {
+      scope.item = {taskName: 'test', done: false}
+      scope.items.push(scope.item);
+      expect(scope.items.length).toEqual(1)
+      scope.remove(scope.item);
+      expect(scope.items.length).toEqual(0);
+    });
+
+  });
+
 });

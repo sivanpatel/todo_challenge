@@ -21,8 +21,9 @@
 
       <ul class="list-group">
         <li ng-repeat="task in items">
-          <input class="doneCheckBox" type="checkbox">
+          <input class="doneCheckBox" type="checkbox" ng-click="switchDone(item)">
           {{ task }}
+          <button class="btn" ng-click="remove(item)">Remove</button>
         </li>
       </ul>
 
