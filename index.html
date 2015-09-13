@@ -3,6 +3,7 @@
 <html lang="en" ng-app="toDo">
   <head>
     <meta charset="utf-8">
+    <title>To Do List</title>
     <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -15,15 +16,15 @@
   <body ng-controller="toDoController as taskCtrl">
     <div>
       <form>
-        <input type="text" ng-model="taskTerm">
+        <input class="task" type="text" ng-model="taskTerm">
         <button class="btn" ng-click="addTask()">Add task</button>
       </form>
 
-      <ul class="list-group">
+      <ul class="list-group task-list">
         <li ng-repeat="task in items">
           <input class="doneCheckBox" type="checkbox" ng-click="switchDone(item)">
           {{ task }}
-          <button class="btn" ng-click="remove(item)">Remove</button>
+          <button class="btn-delete" ng-click="remove(item)">Remove</button>
         </li>
       </ul>
 
